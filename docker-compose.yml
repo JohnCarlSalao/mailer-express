@@ -1,0 +1,20 @@
+
+services:
+  node_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules  
+    env_file:
+      - .env  # Load environment variables from the .env file
+    depends_on: []  # Remove `db` from depends_on since it's in another repo
+    networks:
+      - community-network
+    ports:
+      - "${PORT}:6000"
+
+networks:
+  community-network:
+    external: true  # Ensure it connects to the same network as Repo A
