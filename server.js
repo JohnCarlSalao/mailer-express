@@ -25,7 +25,7 @@ app.use(cors(corsOptions));
 app.use(morgan('dev'));
 
 // Routes
-app.use('/api', mailRoutes);
+app.use('/', mailRoutes);
 
 app.listen(PORT, () => {
     console.log(`🚀 Server is running on port ${PORT}`);
