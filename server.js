@@ -7,7 +7,6 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const HOST = "0.0.0.0";
 const allowedOrigins = ["http://127.0.0.1:3000", "https://wavex.comclark.com","http://localhost:3000"];
 const corsOptions = {
     origin: function (origin, callback) {
